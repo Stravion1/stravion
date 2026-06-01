@@ -194,11 +194,10 @@
   border-color: var(--gold);
 }
 
-/* ── SERVICE CARD cursor pointer ── */
-.service-card { cursor: pointer; }
-.service-card:hover .service-arrow {
-  transform: translateX(6px);
-  color: var(--gold);
+/* ── SERVICE CARD focus ring (keyboard nav) ── */
+.service-card:focus-visible {
+  outline: 2px solid rgba(214,176,106,0.7);
+  outline-offset: 3px;
 }
 
 @media (max-width: 600px) {

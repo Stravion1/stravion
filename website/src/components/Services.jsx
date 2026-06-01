@@ -158,15 +158,21 @@ export default function Services() {
                 role="button"
                 tabIndex={0}
                 onKeyDown={e => e.key === 'Enter' && openModal(s)}
+                aria-label={`Learn more about ${s.title}`}
               >
                 <div className="service-card-inner">
+                  <span className="service-number">{String(i + 1).padStart(2, '0')}</span>
                   <span className="service-icon">{s.icon}</span>
                   <h3 className="service-title">{s.title}</h3>
                   <p className="service-desc">{s.desc}</p>
-                  <div className="service-arrow">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                    </svg>
+                  <div className="service-card-footer">
+                    <span className="service-tap-label">Tap to explore</span>
+                    <div className="service-arrow">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <span className="service-pulse" />
                   </div>
                 </div>
               </div>
