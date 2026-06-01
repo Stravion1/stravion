@@ -65,12 +65,21 @@ export default function App() {
         zIndex: 9998, transition: 'width 0.1s linear', pointerEvents: 'none'
       }} />
       <Cursor />
-      {!loaded && <Preloader onComplete={() => setLoaded(true)} />}
+      {!loaded && (
+        <Preloader
+          onComplete={() => {
+            setLoaded(true)
+            // Refresh scroll triggers now that content is fully visible
+            setTimeout(() => ScrollTrigger.refresh(), 100)
+          }}
+        />
+      )}
 
       {/* Navbar is ALWAYS visible — never hidden by preloader opacity */}
       <Navbar />
 
-      <div style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.5s ease' }}>
+      {/* Site content — always visible under the panels */}
+      <div id="site-content">
         <Routes>
           <Route path="/"           element={<HomePage />} />
           <Route path="/about"      element={<AboutPage />} />

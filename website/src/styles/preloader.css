@@ -1,76 +1,218 @@
-/* ── PRELOADER ─────────────────────────────────── */
+/* ═══════════════════════════════════════════════════
+   PRELOADER — Stravion Construction Group
+   Two-panel cinematic split reveal
+═══════════════════════════════════════════════════ */
+
 #preloader {
   position: fixed;
   inset: 0;
-  background: #050505;
-  z-index: 9999;
+  z-index: 99999;
+  overflow: hidden;
+  /* The website is rendered underneath — visible when panels split */
+  pointer-events: all;
+}
+
+/* ── PANELS ────────────────────────────────────── */
+.pl-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  /* Matte black with subtle warm tint */
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(90,65,30,0.18) 0%, transparent 60%),
+    #080808;
+  will-change: transform;
+}
+.pl-panel-left  { left: 0; }
+.pl-panel-right { right: 0; }
+
+/* ── Noise texture overlay ─── */
+.pl-noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 180px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ── Gold edge stripe on the center-facing side ── */
+.pl-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(214,176,106,0.6) 25%,
+    rgba(228,201,138,0.9) 50%,
+    rgba(214,176,106,0.6) 75%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(214,176,106,0.4);
+}
+.pl-edge-right { right: 0; }
+.pl-edge-left  { left: 0; }
+
+/* ── Corner marks (thin gold L-brackets) ── */
+.pl-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.pl-corner::before,
+.pl-corner::after {
+  content: '';
+  position: absolute;
+  background: rgba(214,176,106,0.5);
+}
+.pl-corner::before { width: 100%; height: 1px; }
+.pl-corner::after  { width: 1px; height: 100%; }
+
+.pl-corner-tl { top: 32px; left: 32px; }
+.pl-corner-bl { bottom: 32px; left: 32px; transform: rotateX(180deg); }
+.pl-corner-tr { top: 32px; right: 32px; transform: rotateY(180deg); }
+.pl-corner-br { bottom: 32px; right: 32px; transform: rotate(180deg); }
+
+/* ── Gold dust particles ── */
+.pl-dust {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(212,175,80,1);
+  pointer-events: none;
+  animation: dustFloat linear infinite;
+  will-change: transform, opacity;
+}
+@keyframes dustFloat {
+  0%   { transform: translateY(0) scale(1);   opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 0.5; }
+  100% { transform: translateY(-80px) scale(0.3); opacity: 0; }
+}
+
+/* ── CENTER CONTENT — above both panels ── */
+.pl-center {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-/* Starfield particles */
-.particle {
-  position: absolute;
-  width: 1.5px;
-  height: 1.5px;
-  background: rgba(212,175,80,0.45);
-  border-radius: 50%;
-  animation: particleFloat linear infinite;
-}
-@keyframes particleFloat {
-  0%   { transform: translateY(0) scale(1); opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 0.6; }
-  100% { transform: translateY(-60px) scale(0.5); opacity: 0; }
-}
-
-/* Counter */
-.pl-counter {
-  position: absolute;
-  bottom: 3rem; right: 3rem;
-  font-family: 'Outfit', monospace;
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-weight: 800;
-  color: rgba(212,175,80,0.06);
-  letter-spacing: -0.02em;
-  opacity: 0;
-  line-height: 1;
+  z-index: 2;
   pointer-events: none;
-  user-select: none;
 }
 
-/* Logo mark — starts invisible, scales up for aperture */
-.pl-logo {
-  opacity: 0;
-  transform: scale(0.85);
-  transform-origin: center center;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 0 24px rgba(212,175,80,0.4));
-}
-
-/* Tagline */
-.pl-tagline {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.38em;
-  color: rgba(212,175,80,0.8);
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(10px);
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-/* Gold line */
-.pl-line-wrap {
+/* ── Logo wrap ── */
+.pl-logo-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  margin-bottom: 28px;
+  will-change: transform, opacity, filter;
+}
+
+.pl-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 18px rgba(214,176,106,0.45));
+}
+
+/* Soft radial glow behind the logo */
+.pl-logo-glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(214,176,106,0.18) 0%,
+    rgba(214,176,106,0.06) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: 1;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+
+/* ── Scan line sweep ── */
+.pl-scan {
+  position: absolute;
+  inset: 0;
+  /* Vertical gradient stripe that sweeps across */
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(228,201,138,0.12) 30%,
+    rgba(228,201,138,0.55) 50%,
+    rgba(228,201,138,0.12) 70%,
+    transparent 100%
+  );
+  z-index: 3;
+  will-change: transform, opacity;
+  transform: translateX(-110%);
+  mix-blend-mode: screen;
+  border-radius: 4px;
+}
+
+/* ── Brand text ── */
+.pl-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  will-change: opacity, transform;
+  margin-bottom: 20px;
+}
+.pl-name {
+  font-family: 'Outfit', 'Cormorant Garamond', sans-serif;
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #E4C98A;
+  line-height: 1;
+  /* Subtle glow */
+  text-shadow: 0 0 28px rgba(228,201,138,0.5);
+}
+.pl-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(7px, 1vw, 9px);
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(214,176,106,0.65);
+  line-height: 1;
+}
+
+/* ── Gold divider ── */
+.pl-line-wrap {
+  width: 180px;
+  overflow: hidden;
 }
 .pl-line {
   height: 1px;
-  width: 0;
-  background: linear-gradient(90deg, transparent, var(--gold, #D6B06A), transparent);
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214,176,106,0.9) 30%,
+    #E4C98A 50%,
+    rgba(214,176,106,0.9) 70%,
+    transparent
+  );
+  transform-origin: center;
+  will-change: transform;
+  /* scaleX(0) → scaleX(1) animated by GSAP */
 }

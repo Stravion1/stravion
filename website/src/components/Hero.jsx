@@ -18,9 +18,10 @@ export default function Hero() {
       })
       gsap.set('.hero-scroll', { opacity: 0, y: 0 })
 
-      const tl = gsap.timeline({ delay: 3.2 })
+      // Animate in after preloader panels clear (~3.5s into load)
+      const tl = gsap.timeline({ delay: 3.5 })
       tl.to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
-        /* hero title is handled by LineReveal with its own delay */
+        /* hero title is handled by LineReveal with its own delay of 3.7 */
         .to('.hero-sub',     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '+=0.35')
         .to('.hero-btns',    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
         .to('.hero-scroll',  { opacity: 1,        duration: 0.6 }, '-=0.2')
@@ -60,7 +61,7 @@ export default function Hero() {
           <LineReveal
             as="span"
             lines={['Luxury Construction.', 'Built To Impress.']}
-            delay={3.6}
+            delay={3.7}
             duration={1.05}
             staggerTime={0.18}
             trigger="mount"
