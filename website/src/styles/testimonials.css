@@ -1,0 +1,103 @@
+.testimonials {
+  background: var(--dark);
+  overflow: hidden;
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.testimonials-header .section-label { justify-content: center; }
+.testimonials-header .section-label::before { display: none; }
+
+.testimonials-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(214,176,106,0.15);
+  border-radius: 6px;
+  padding: 52px 56px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 24px; left: 40px;
+  font-family: var(--font-serif);
+  font-size: 120px;
+  color: rgba(214,176,106,0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.stars {
+  display: block;
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.testimonial-text {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.author-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 18px; font-weight: 600;
+  color: var(--black);
+  flex-shrink: 0;
+}
+.author-name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 13px; font-weight: 500;
+  color: var(--white);
+}
+.author-role {
+  display: block;
+  font-size: 11px; color: var(--white-60);
+  margin-top: 2px;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(214,176,106,0.25);
+  transition: all 0.3s ease;
+  border: none;
+}
+.dot.active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 3px;
+}
+
+@media (max-width: 640px) {
+  .testimonial-card { padding: 36px 28px; }
+}

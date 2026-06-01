@@ -1,0 +1,150 @@
+/* =============================================
+   GLOBAL DESIGN TOKENS & BASE STYLES
+   STRAVION Construction Group
+============================================= */
+:root {
+  --black: #050505;
+  --dark: #0d0d0d;
+  --dark-2: #111111;
+  --charcoal: #1c1c1c;
+  --gold: #D6B06A;
+  --gold-light: #E4C98A;
+  --gold-bright: #f0d898;
+  --gold-dark: #8E6C3F;
+  --white: #F6F3EE;
+  --white-60: rgba(246,243,238,0.6);
+  --white-20: rgba(246,243,238,0.2);
+  --white-10: rgba(246,243,238,0.08);
+  --gold-glow: rgba(214,176,106,0.18);
+  --gold-glow-md: rgba(214,176,106,0.35);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --ease: cubic-bezier(0.76,0,0.24,1);
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --nav-h: 88px;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { font-size: 16px; scroll-behavior: auto; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--gold); color: var(--black); }
+
+img, video { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: none; border: none; background: none; font: inherit; }
+ul, ol { list-style: none; }
+
+/* --------- Shared Section Styles --------- */
+.section-pad { padding: 120px 0; }
+.container { max-width: 1360px; margin: 0 auto; padding: 0 56px; }
+@media (max-width: 768px) { .container { padding: 0 24px; } .section-pad { padding: 80px 0; } }
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--white);
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+.gold-rule {
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 24px 0;
+}
+
+/* --------- Buttons --------- */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 16px 40px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  cursor: none;
+}
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-light);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease);
+}
+.btn-gold:hover::before { transform: scaleX(1); transform-origin: left; }
+.btn-gold span { position: relative; z-index: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 16px 40px;
+  border-radius: 2px;
+  border: 1px solid rgba(214,176,106,0.4);
+  transition: all 0.3s ease;
+  cursor: none;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  background: var(--gold-glow);
+}
+
+/* --------- GSAP Reveal Targets --------- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.reveal-fade {
+  opacity: 0;
+}

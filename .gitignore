@@ -1,0 +1,20 @@
+# Dependencies
+website/node_modules/
+
+# Build output
+website/dist/
+
+# Env files
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite cache
+website/.vite/
+
+# Large root media files (kept as brand assets locally only)
+Recording 2026-06-01 180741.mp4
