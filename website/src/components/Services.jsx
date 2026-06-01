@@ -16,7 +16,7 @@ const SERVICES = [
     desc: 'Full structural modifications, rear and side extensions built to the highest standard.',
     fullDesc: 'We design and build bespoke rear, side, and over-structure extensions that seamlessly integrate with your existing property. Our structural engineers handle everything from planning drawings to RSJ installation, party wall agreements, and building regulations sign-off.',
     includes: ['Planning permission support', 'Structural engineering & calculations', 'RSJ / steel beam installation', 'Party wall agreements', 'Full masonry & roofing works', 'Internal remodelling & decoration'],
-    typical: '£40,000 – £150,000',
+
   },
   {
     icon: '🏢',
@@ -24,7 +24,7 @@ const SERVICES = [
     desc: 'Bespoke commercial interiors designed to elevate your business environment.',
     fullDesc: 'From restaurants to offices, retail units to clinics — we deliver complete commercial fit-outs that reflect your brand, meet regulatory requirements, and create an environment that works hard for your business.',
     includes: ['Full design & specification', 'Strip-out & structural alterations', 'M&E (mechanical & electrical)', 'Suspended ceilings & partitioning', 'Flooring, tiling & decoration', 'Furniture, signage & commissioning'],
-    typical: '£30,000 – £500,000+',
+
   },
   {
     icon: '🪟',
@@ -32,7 +32,7 @@ const SERVICES = [
     desc: 'High-impact shopfronts — aluminium, glass, and steel systems professionally installed.',
     fullDesc: 'Your shopfront is your first impression. We install bespoke aluminium-framed glazed shopfronts, roller shutters, and composite entrance systems that balance aesthetics, security, and building regulations compliance.',
     includes: ['Aluminium & glass shopfront systems', 'Roller shutters & grilles', 'Structural lintel installation', 'Planning & building control', 'Signage integration', 'Access control systems'],
-    typical: '£8,000 – £40,000',
+
   },
   {
     icon: '🏠',
@@ -40,7 +40,7 @@ const SERVICES = [
     desc: 'Flat roof, pitched roof, and all external weatherproofing solutions.',
     fullDesc: 'Our roofing division handles everything from full pitched roof replacements to flat roof systems, fascias, soffits, guttering, and external wall insulation. All works are carried out by qualified operatives with full warranty.',
     includes: ['Pitched roof replacement (concrete & slate)', 'Flat roof systems (GRP, felt, EPDM)', 'Fascias, soffits & guttering', 'Chimneys, flashings & valleys', 'External wall insulation (EWI)', 'Velux & roof light installation'],
-    typical: '£5,000 – £60,000',
+
   },
   {
     icon: '🛁',
@@ -48,7 +48,7 @@ const SERVICES = [
     desc: 'Luxury bathroom design and installation with premium materials and gold finishes.',
     fullDesc: 'We create hotel-grade bathroom and wet room experiences in residential and commercial settings. From concept to completion, our bathroom specialists handle waterproofing, plumbing, tiling, and all luxury fixtures and fittings.',
     includes: ['Wet room waterproofing systems', 'Bespoke tiling (porcelain, marble)', 'Underfloor heating', 'Luxury fixtures & fittings', 'Steam shower enclosures', 'LED mood lighting'],
-    typical: '£8,000 – £50,000',
+
   },
   {
     icon: '🔧',
@@ -56,7 +56,7 @@ const SERVICES = [
     desc: 'Gas Safe certified engineers for all plumbing, heating, and gas installation works.',
     fullDesc: 'Our Gas Safe registered engineers handle all plumbing and gas works across residential and commercial projects. From full re-pipes to boiler replacements, underfloor heating systems, and commercial gas installations.',
     includes: ['Full property re-plumbing', 'Boiler installation & servicing', 'Underfloor heating systems', 'Bathroom & kitchen plumbing', 'Gas Safe commercial installations', 'Landlord gas safety certificates'],
-    typical: '£2,000 – £30,000',
+
   },
   {
     icon: '⚡',
@@ -64,7 +64,7 @@ const SERVICES = [
     desc: 'Part P certified electricians. Rewires, consumer units, smart lighting systems.',
     fullDesc: 'Our NICEIC-approved electricians carry out the full range of domestic and commercial electrical works — from full property rewires and consumer unit upgrades to smart home systems, EV charger installation, and commercial distribution boards.',
     includes: ['Full property rewires', 'Consumer unit upgrades', 'Smart home / automation systems', 'EV charger installation', 'Commercial distribution boards', 'NICEIC certificates & sign-off'],
-    typical: '£3,000 – £40,000',
+
   },
   {
     icon: '🎨',
@@ -72,7 +72,7 @@ const SERVICES = [
     desc: 'Perfect skims, feature walls, and premium decorating across all project types.',
     fullDesc: 'Our plastering and decorating teams deliver flawless finishes across every project. From scratch coat and skim plaster to specialist finishes, feature walls, and premium decorating — the difference is in the detail.',
     includes: ['Full room skim plastering', 'Dot & dab boarding', 'Coving & cornice installation', 'Feature walls & specialist finishes', 'Full interior decoration', 'External rendering & painting'],
-    typical: '£500 – £15,000',
+
   },
   {
     icon: '🪵',
@@ -80,7 +80,7 @@ const SERVICES = [
     desc: 'LVT, porcelain, marble, and hardwood flooring — expertly laid and finished.',
     fullDesc: 'From luxury vinyl tile to natural stone, engineered hardwood to large-format porcelain — our flooring specialists ensure perfect preparation, precision installation, and flawless finishing on every surface.',
     includes: ['Large-format porcelain & stone', 'Marble & natural stone', 'Engineered hardwood', 'LVT & carpet installation', 'Floor preparation & levelling', 'Underfloor heating compatibility'],
-    typical: '£1,000 – £20,000',
+
   },
   {
     icon: '💨',
@@ -88,7 +88,7 @@ const SERVICES = [
     desc: 'MVHR and mechanical ventilation solutions for residential and commercial builds.',
     fullDesc: 'Effective ventilation is essential for air quality, building performance, and regulatory compliance. We design and install MVHR (heat recovery) systems, MEV, and mechanical ventilation across residential and commercial projects.',
     includes: ['MVHR whole-house systems', 'MEV centralised extraction', 'Commercial ventilation design', 'Building regulations compliance', 'Duct design & installation', 'Commissioning & certification'],
-    typical: '£2,000 – £15,000',
+
   },
   {
     icon: '🔩',
@@ -96,7 +96,7 @@ const SERVICES = [
     desc: 'RSJ installation, steel frames, load-bearing alterations with full calculations.',
     fullDesc: 'Load-bearing alterations require precision, expertise, and the right engineering. Our structural team handles RSJ beam installation, steel frame construction, loft conversions, and all structural modifications with full SE calculations and building control approval.',
     includes: ['RSJ & universal beam installation', 'Steel frame construction', 'Load-bearing wall removal', 'Structural engineer calculations', 'Building control liaison', 'Temporary support works'],
-    typical: '£3,000 – £50,000',
+
   },
 ]
 
@@ -209,10 +209,6 @@ export default function Services() {
               </ul>
             </div>
 
-            <div className="svc-modal-typical">
-              <span>Typical Investment:</span>
-              <strong>{modal.typical}</strong>
-            </div>
 
             <div className="svc-modal-actions">
               <a

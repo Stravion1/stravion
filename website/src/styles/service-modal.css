@@ -121,29 +121,6 @@
   margin-top: 1px;
 }
 
-.svc-modal-typical {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(212,175,80,0.06);
-  border: 1px solid rgba(212,175,80,0.2);
-  border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.75rem;
-}
-
-.svc-modal-typical span {
-  font-size: 0.8rem;
-  color: var(--silver);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.svc-modal-typical strong {
-  color: var(--gold);
-  font-family: var(--font-serif, Georgia, serif);
-  font-size: 1.1rem;
-}
 
 .svc-modal-actions {
   display: flex;
