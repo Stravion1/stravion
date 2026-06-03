@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PROJECTS } from '../data/projects'
 import Footer from '../components/Footer'
+import SEOTags from '../components/SEOTags'
 import '../styles/project-detail.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -50,6 +51,12 @@ export default function ProjectDetail() {
 
   return (
     <div ref={pageRef}>
+      <SEOTags 
+        title={`${project.title} | STRAVION Projects`}
+        description={project.description}
+        url={`https://stravion.co.uk/projects/${project.slug}`}
+        image={`https://stravion.co.uk${project.cover}`}
+      />
       {/* HERO */}
       <section className="pd-hero">
         <div className="pd-hero-bg">

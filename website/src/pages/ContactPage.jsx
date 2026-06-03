@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Footer from '../components/Footer'
+import SEOTags from '../components/SEOTags'
 import TextReveal from '../components/TextReveal'
 import '../styles/contact-page.css'
 
@@ -68,6 +69,11 @@ export default function ContactPage() {
 
   return (
     <div ref={pageRef}>
+      <SEOTags 
+        title="Contact Us | STRAVION Construction Group"
+        description="Get in touch with Stravion for a free consultation and detailed quotation on your next luxury construction project in London."
+        url="https://stravion.co.uk/contact"
+      />
       {/* HERO */}
       <section className="cp-hero">
         <div className="cp-hero-bg">

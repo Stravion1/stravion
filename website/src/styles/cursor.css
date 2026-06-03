@@ -1,32 +1,41 @@
-.cursor-dot {
+/* ── CUSTOM CURSOR ───────────────────────────────── */
+
+/* Hide native cursor sitewide on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
+/* ── HOUSE ICON ── */
+.cursor-house {
   position: fixed;
-  top: 0; left: 0;
-  width: 8px; height: 8px;
-  background: var(--gold);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  /* Negative margin centers the 22px SVG exactly on the mouse coords */
+  margin-top: -11px;
+  margin-left: -11px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
+  color: var(--gold);
+  filter: drop-shadow(0 0 4px rgba(214,176,106,0.55));
+  transition:
+    color  0.2s ease,
+    filter 0.2s ease,
+    scale  0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.cursor-ring {
-  position: fixed;
-  top: 0; left: 0;
-  width: 40px; height: 40px;
-  border: 1px solid rgba(214,176,106,0.7);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  will-change: transform;
-  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+.cursor-house.hovered {
+  color: #fff;
+  scale: 1.45;
+  filter: drop-shadow(0 0 10px rgba(214,176,106,0.9));
 }
 
-.cursor-ring.hovered {
-  width: 56px;
-  height: 56px;
-  background: rgba(214,176,106,0.08);
-}
-
+/* Hide on touch devices */
 @media (hover: none) {
-  .cursor-dot, .cursor-ring { display: none; }
+  .cursor-house { display: none; }
 }

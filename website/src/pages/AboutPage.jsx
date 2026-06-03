@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Footer from '../components/Footer'
+import SEOTags from '../components/SEOTags'
 import TextReveal, { LineReveal, WordReveal } from '../components/TextReveal'
 import '../styles/about-page.css'
 
@@ -80,6 +81,12 @@ export default function AboutPage() {
 
   return (
     <div ref={pageRef}>
+      <SEOTags 
+        title="About Us | STRAVION Construction Group"
+        description="With over 15 years of excellence, Stravion is a leading luxury construction company in London. Discover our journey, values, and commitment to quality."
+        url="https://stravion.co.uk/about"
+      />
+
 
       {/* ── HERO ── */}
       <section className="ap-hero">

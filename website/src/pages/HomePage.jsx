@@ -1,3 +1,4 @@
+import SEOTags from '../components/SEOTags'
 import Cursor from '../components/Cursor'
 import Hero from '../components/Hero'
 import Marquee from '../components/Marquee'
@@ -14,6 +15,11 @@ import Footer from '../components/Footer'
 export default function HomePage() {
   return (
     <main>
+      <SEOTags 
+        title="STRAVION Construction Group | Luxury Construction London"
+        description="London's premier luxury construction group. Specialising in high-end residential renovations, commercial fit-outs, and complex structural works."
+        url="https://stravion.co.uk/"
+      />
       <Hero />
       <Marquee />
       <About />

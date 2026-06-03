@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PROJECTS } from '../data/projects'
 import Footer from '../components/Footer'
+import SEOTags from '../components/SEOTags'
 import TextReveal from '../components/TextReveal'
 import '../styles/projects-page.css'
 
@@ -43,6 +44,12 @@ export default function ProjectsPage() {
 
   return (
     <div ref={pageRef}>
+      <SEOTags 
+        title="Our Portfolio | STRAVION Construction Group"
+        description="Explore our portfolio of world-class luxury residential, commercial, and structural construction projects across London."
+        url="https://stravion.co.uk/projects"
+      />
+
 
       {/* ── HERO ── */}
       <section className="pp-hero">
