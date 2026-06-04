@@ -38,10 +38,10 @@ export default function ContactPage() {
       /* Hero animations — simple fade+up (label is TextReveal, handled separately) */
       gsap.from('.cp-hero-sub', { opacity: 0, y: 20, duration: 0.65, ease: 'power3.out', delay: 0.55 })
 
-      /* Info cards — bottom-to-up stagger */
+      /* Info cards — slide up only, opacity stays at 1 so they're always visible */
       gsap.from('.cp-info-item', {
-        y: 45, opacity: 0, stagger: 0.1, duration: 0.65, ease: 'power3.out',
-        scrollTrigger: { trigger: '.cp-info-grid', start: 'top 82%', once: true },
+        y: 40, stagger: 0.08, duration: 0.6, ease: 'power3.out',
+        scrollTrigger: { trigger: '.cp-info-grid', start: 'top 90%', once: true },
       })
       /* Form */
       gsap.from('.cp-form-wrap > *', {
