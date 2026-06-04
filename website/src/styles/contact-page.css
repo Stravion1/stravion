@@ -48,7 +48,7 @@
 .cp-info-section { background: var(--obsidian); }
 .cp-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
 .cp-info-item {
@@ -56,16 +56,19 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1.75rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(212,175,80,0.1);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,175,80,0.25);
   border-radius: 1.25rem;
   text-decoration: none;
   transition: all 0.3s;
+  /* guarantee visible even if GSAP scroll trigger misses */
+  opacity: 1 !important;
 }
 .cp-info-item:hover {
-  border-color: rgba(212,175,80,0.3);
-  background: rgba(212,175,80,0.04);
-  transform: translateY(-3px);
+  border-color: rgba(212,175,80,0.55);
+  background: rgba(212,175,80,0.07);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
 }
 .cp-wa-info {
   border-color: rgba(37,211,102,0.2);
