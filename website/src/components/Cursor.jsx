@@ -26,7 +26,8 @@ export default function Cursor() {
     }
 
     const animate = () => {
-      el.style.transform = `translate(${mx}px, ${my}px)`
+      /* subtract half icon size so the centre of the 22px icon lands on the pointer */
+      el.style.transform = `translate(${mx - 11}px, ${my - 11}px)`
       raf = requestAnimationFrame(animate)
     }
     animate()

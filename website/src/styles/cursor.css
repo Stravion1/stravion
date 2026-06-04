@@ -10,9 +10,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* Negative margin centers the 22px SVG exactly on the mouse coords */
-  margin-top: -11px;
-  margin-left: -11px;
   width: 22px;
   height: 22px;
   display: flex;
