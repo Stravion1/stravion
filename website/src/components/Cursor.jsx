@@ -1,20 +1,29 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import '../styles/cursor.css'
 
 export default function Cursor() {
-  const houseRef = useRef(null)
-
   useEffect(() => {
-    const el = houseRef.current
-
-    /* Lift directly into <body> so GSAP parent transforms don't break fixed pos */
+    /* ── Create the cursor element entirely outside React's DOM tree ──
+       This avoids React reconciler interference and any transform-context
+       issues from GSAP-animated parent elements.                         */
+    const el = document.createElement('div')
+    el.className = 'cursor-house'
+    el.style.opacity = '0'
+    el.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24" width="22" height="22"
+        fill="none" stroke="currentColor"
+        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="3 10.5 12 3 21 10.5"/>
+        <rect x="5"   y="10.5" width="14" height="10.5" rx="0.5"/>
+        <rect x="9.5" y="15"   width="5"  height="6"    rx="0.3"/>
+        <rect x="15"  y="5.5"  width="2"  height="4"    rx="0.3"/>
+      </svg>`
     document.body.appendChild(el)
 
     let mx = 0, my = 0
     let raf
     let visible = false
-
-    el.style.opacity = '0'
 
     const onMove = (e) => {
       mx = e.clientX
@@ -26,14 +35,14 @@ export default function Cursor() {
     }
 
     const animate = () => {
-      /* subtract half icon size so the centre of the 22px icon lands on the pointer */
+      /* translate so the centre of the 22px icon sits on the pointer */
       el.style.transform = `translate(${mx - 11}px, ${my - 11}px)`
       raf = requestAnimationFrame(animate)
     }
     animate()
     window.addEventListener('mousemove', onMove, { passive: true })
 
-    /* Hover state */
+    /* Hover state on interactive elements */
     const onEnter = () => el.classList.add('hovered')
     const onLeave = () => el.classList.remove('hovered')
 
@@ -58,23 +67,6 @@ export default function Cursor() {
     }
   }, [])
 
-  return (
-    <div ref={houseRef} className="cursor-house">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="22" height="22"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="3 10.5 12 3 21 10.5" />
-        <rect x="5" y="10.5" width="14" height="10.5" rx="0.5" />
-        <rect x="9.5" y="15" width="5" height="6" rx="0.3" />
-        <rect x="15" y="5.5" width="2" height="4" rx="0.3" />
-      </svg>
-    </div>
-  )
+  /* React renders nothing — cursor DOM is managed entirely imperatively */
+  return null
 }
