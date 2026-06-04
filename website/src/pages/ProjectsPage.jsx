@@ -14,6 +14,7 @@ const FILTERS = ['All', 'Residential', 'Commercial', 'Structural']
 
 export default function ProjectsPage() {
   const [active, setActive] = useState('All')
+  const [videoLightbox, setVideoLightbox] = useState(null) // { src, title }
   const pageRef = useRef(null)
 
   const visible = active === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === active)
@@ -149,25 +150,52 @@ export default function ProjectsPage() {
               Project <em>Videos</em>
             </h2>
             <div className="pp-video-grid">
-              {PROJECTS.flatMap(p => p.videos.map((v, vi) => ({
+              {PROJECTS.flatMap(p => p.videos.map((v) => ({
                 src: v, title: p.title, cat: p.category, pid: p.id
               }))).map((vid, i) => (
-                <Link key={i} to={`/projects/${vid.pid}`} className="pp-video-card">
+                <div key={i} className="pp-video-card">
                   <video src={vid.src} muted playsInline preload="metadata"
                     onMouseEnter={e => e.target.play()}
                     onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0 }}
                   />
                   <div className="pp-video-overlay">
-                    <div className="pp-video-play">▶</div>
+                    {/* Play button — opens lightbox */}
+                    <button
+                      className="pp-video-play"
+                      onClick={() => setVideoLightbox({ src: vid.src, title: vid.title })}
+                      aria-label={`Play ${vid.title}`}
+                    >▶</button>
                     <div className="pp-video-meta">
                       <span className="pp-video-cat">{vid.cat}</span>
                       <p className="pp-video-title">{vid.title}</p>
+                      <Link
+                        to={`/projects/${vid.pid}`}
+                        className="pp-video-view-link"
+                        onClick={e => e.stopPropagation()}
+                      >
+                        View Project →
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
+
+          {/* ── VIDEO LIGHTBOX ── */}
+          {videoLightbox && (
+            <div className="pp-lightbox" onClick={() => setVideoLightbox(null)}>
+              <button className="pp-lb-close" onClick={() => setVideoLightbox(null)}>✕</button>
+              <video
+                src={videoLightbox.src}
+                controls
+                autoPlay
+                playsInline
+                className="pp-lb-video"
+                onClick={e => e.stopPropagation()}
+              />
+            </div>
+          )}
 
           {/* Bottom CTA */}
           <div className="pp-bottom-cta">
