@@ -146,6 +146,14 @@ export default function Footer() {
         <div className="container footer-bottom-inner">
           <p className="footer-copy">© {new Date().getFullYear()} STRAVION Construction Group. All rights reserved.</p>
           <p className="footer-reg">Registered in England &amp; Wales · info@stravion.co.uk</p>
+          <a
+            href="https://saud-portfolio-eight.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-madeby"
+          >
+            Made by <span className="footer-madeby-name">saud.co</span>
+          </a>
         </div>
       </div>
     </footer>

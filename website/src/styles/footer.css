@@ -116,6 +116,47 @@
   color: rgba(246,243,238,0.3);
 }
 
+/* Made by saud.co */
+.footer-madeby {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(246,243,238,0.3);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid rgba(214,176,106,0.0);
+  border-radius: 20px;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-madeby:hover {
+  color: var(--gold);
+  border-color: rgba(214,176,106,0.35);
+  background: rgba(214,176,106,0.06);
+  box-shadow: 0 0 12px rgba(214,176,106,0.12);
+}
+.footer-madeby-name {
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  position: relative;
+}
+.footer-madeby-name::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.footer-madeby:hover .footer-madeby-name::after {
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1/-1; }
