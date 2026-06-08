@@ -111,7 +111,7 @@ export default function Footer() {
             <ul className="footer-contact">
               <li>
                 <span className="contact-icon"><IconPin /></span>
-                <span>167-169 Great Portland Street, 5th Floor, London W1W 5PF</span>
+                <span>18 Babingley Drive, Leicester, LE4 0HG</span>
               </li>
               <li>
                 <span className="contact-icon"><IconPhone /></span>

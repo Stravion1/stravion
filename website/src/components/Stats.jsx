@@ -3,8 +3,8 @@ import { gsap } from 'gsap'
 import '../styles/stats.css'
 
 const STATS = [
-  { num: 100, suffix: '+', label: 'Projects Delivered' },
-  { num: 98, suffix: '%', label: 'Client Satisfaction' },
+  { num: 300, suffix: '+', label: 'Projects Delivered' },
+  { num: 100, suffix: '%', label: 'Client Satisfaction' },
   { num: 15, suffix: '+', label: 'Years Experience' },
   { num: 24, suffix: '/7', label: 'Project Support' },
 ]

@@ -16,8 +16,8 @@ export default function HomePage() {
   return (
     <main>
       <SEOTags 
-        title="STRAVION Construction Group | Luxury Construction London"
-        description="London's premier luxury construction group. Specialising in high-end residential renovations, commercial fit-outs, and complex structural works."
+        title="STRAVION Construction Group | Premium Construction UK"
+        description="Midlands-based premium construction & project management company. Delivering high-end residential and commercial construction projects across the UK."
         url="https://stravion.co.uk/"
       />
       <Hero />

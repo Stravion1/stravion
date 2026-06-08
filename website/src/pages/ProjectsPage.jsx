@@ -10,7 +10,7 @@ import '../styles/projects-page.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const FILTERS = ['All', 'Residential', 'Commercial', 'Structural']
+const FILTERS = ['All', 'High-End Domestic', 'Commercial']
 
 export default function ProjectsPage() {
   const [active, setActive] = useState('All')
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
     <div ref={pageRef}>
       <SEOTags 
         title="Our Portfolio | STRAVION Construction Group"
-        description="Explore our portfolio of world-class luxury residential, commercial, and structural construction projects across London."
+        description="Explore our portfolio of high-end residential and commercial construction projects delivered across the UK."
         url="https://stravion.co.uk/projects"
       />
 
@@ -70,11 +70,11 @@ export default function ProjectsPage() {
               A Signature Work.
             </TextReveal>
           </h1>
-          <p className="pp-hero-sub">Residential, commercial, and structural excellence across London and beyond.</p>
+          <p className="pp-hero-sub">High-end domestic and commercial excellence delivered across the UK.</p>
           <div className="pp-hero-stats">
-            <div className="pp-hstat"><span>500+</span><p>Projects</p></div>
+            <div className="pp-hstat"><span>300+</span><p>Projects</p></div>
             <div className="pp-hstat"><span>15+</span><p>Years</p></div>
-            <div className="pp-hstat"><span>98%</span><p>Satisfaction</p></div>
+            <div className="pp-hstat"><span>100%</span><p>Satisfaction</p></div>
           </div>
         </div>
       </section>
@@ -129,7 +129,6 @@ export default function ProjectsPage() {
                   <p className="pp-card-sub">{p.subtitle}</p>
                   <div className="pp-card-meta">
                     <span>📍 {p.location}</span>
-                    <span>💰 {p.value}</span>
                     <span>⏱ {p.duration}</span>
                   </div>
                   <div className="pp-card-cta">

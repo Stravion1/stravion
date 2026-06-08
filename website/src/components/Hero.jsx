@@ -19,7 +19,7 @@ export default function Hero() {
       gsap.set('.hero-scroll', { opacity: 0, y: 0 })
 
       // Animate in after preloader panels clear (~3.5s into load)
-      const tl = gsap.timeline({ delay: 3.5 })
+      const tl = gsap.timeline({ delay: 3.0 })
       tl.to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
         /* hero title is handled by LineReveal with its own delay of 3.7 */
         .to('.hero-sub',     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '+=0.35')
@@ -52,7 +52,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <div className="hero-eyebrow">
           <span className="line" />
-          London&apos;s Premier Construction Group
+          Midlands-Based &bull; UK-Wide Delivery
           <span className="line" />
         </div>
 
@@ -60,8 +60,8 @@ export default function Hero() {
         <h1 className="hero-title">
           <LineReveal
             as="span"
-            lines={['Luxury Construction.', 'Built To Impress.']}
-            delay={3.7}
+            lines={['Building Excellence.', 'Delivering Confidence.']}
+            delay={3.2}
             duration={1.05}
             staggerTime={0.18}
             trigger="mount"
@@ -70,8 +70,8 @@ export default function Hero() {
 
         {/* Sub */}
         <p className="hero-sub">
-          Delivering high-end residential, commercial, and structural<br />
-          construction projects across the United Kingdom.
+          Specialist construction &amp; project management company delivering
+          outstanding results across the United Kingdom.
         </p>
 
         {/* Buttons */}

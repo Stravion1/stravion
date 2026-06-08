@@ -7,7 +7,7 @@ import '../styles/projects.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const FILTERS = ['All', 'Residential', 'Commercial', 'Structural']
+const FILTERS = ['All', 'High-End Domestic', 'Commercial']
 
 export default function Projects() {
   const sectionRef = useRef(null)
@@ -49,10 +49,10 @@ export default function Projects() {
         <div className="projects-header">
           <p className="section-label">Our Work</p>
           <h2 className="section-title">
-            Featured <em>Projects</em>
+            Our Past <em>Projects</em>
           </h2>
           <p className="projects-sub">
-            Every project reflects our commitment to craftsmanship, detail, and excellence.
+            A selection of our work across high-end domestic and commercial sectors.
           </p>
         </div>
 

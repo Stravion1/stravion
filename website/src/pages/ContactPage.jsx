@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 const WA_NUMBER = '447706938064'
 const PHONE     = '07706938064'
 const EMAIL     = 'info@stravion.co.uk'
-const ADDRESS   = '167-169 Great Portland Street, 5th Floor, London W1W 5PF'
+const ADDRESS   = '18 Babingley Drive, Leicester, LE4 0HG'
 
 const SERVICES_LIST = [
   'Extensions & Structural Works',
@@ -71,7 +71,7 @@ export default function ContactPage() {
     <div ref={pageRef}>
       <SEOTags 
         title="Contact Us | STRAVION Construction Group"
-        description="Get in touch with Stravion for a free consultation and detailed quotation on your next luxury construction project in London."
+        description="Get in touch with Stravion for a free consultation and detailed quotation on your next construction project across the UK."
         url="https://stravion.co.uk/contact"
       />
       {/* HERO */}
@@ -128,8 +128,8 @@ export default function ContactPage() {
               <div className="cp-info-icon">📍</div>
               <div>
                 <h4>Our Office</h4>
-                <p>167-169 Great Portland St</p>
-                <span>London W1W 5PF</span>
+                <p>18 Babingley Drive</p>
+                <span>Leicester, LE4 0HG</span>
               </div>
             </div>
           </div>

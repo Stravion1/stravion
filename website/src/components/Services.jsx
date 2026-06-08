@@ -9,9 +9,89 @@ gsap.registerPlugin(ScrollTrigger)
 
 const WA = '447706938064'
 
+/* ─── Premium SVG Icons ─── */
+const IcoExtensions = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <rect x="2" y="10" width="20" height="12" rx="1"/>
+    <path d="M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3"/>
+    <path d="M12 2v3M9 5h6"/>
+  </svg>
+)
+const IcoCommercial = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <rect x="2" y="3" width="20" height="18" rx="1"/>
+    <path d="M2 9h20M8 9v12M16 9v12"/>
+    <rect x="5" y="12" width="3" height="3"/>
+    <rect x="11" y="12" width="3" height="3"/>
+    <rect x="17" y="12" width="0" height="0"/>
+  </svg>
+)
+const IcoShopfront = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <path d="M3 9l1-5h16l1 5"/>
+    <path d="M2 9h20v12H2z"/>
+    <path d="M9 9v12M15 9v12"/>
+    <path d="M9 15h6"/>
+  </svg>
+)
+const IcoRoofing = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <path d="M3 12L12 3l9 9"/>
+    <path d="M5 12v9h14v-9"/>
+    <path d="M9 21v-6h6v6"/>
+  </svg>
+)
+const IcoBathroom = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <path d="M2 12h20v3a4 4 0 01-4 4H6a4 4 0 01-4-4v-3z"/>
+    <path d="M6 12V5a2 2 0 012-2h1a2 2 0 012 2v1"/>
+    <path d="M4 19l-1 2M20 19l1 2"/>
+  </svg>
+)
+const IcoPlumbing = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <path d="M3 12h6M15 12h6M9 12a3 3 0 006 0"/>
+    <path d="M12 3v6M12 15v6"/>
+    <circle cx="12" cy="12" r="2"/>
+  </svg>
+)
+const IcoElectrical = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H13L13 2z"/>
+  </svg>
+)
+const IcoPlastering = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <rect x="3" y="3" width="18" height="14" rx="1"/>
+    <path d="M3 17h18M7 21h10"/>
+    <path d="M8 8h8M8 11h5"/>
+  </svg>
+)
+const IcoTiling = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <rect x="2" y="2" width="9" height="9" rx="0.5"/>
+    <rect x="13" y="2" width="9" height="9" rx="0.5"/>
+    <rect x="2" y="13" width="9" height="9" rx="0.5"/>
+    <rect x="13" y="13" width="9" height="9" rx="0.5"/>
+  </svg>
+)
+const IcoVentilation = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+  </svg>
+)
+const IcoSteel = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+    <path d="M2 6h20M2 18h20"/>
+    <path d="M6 6v12M18 6v12"/>
+    <path d="M2 12h4M18 12h4"/>
+  </svg>
+)
+
 const SERVICES = [
   {
-    icon: '🏗️',
+    icon: <IcoExtensions />,
     title: 'Extensions & Structural Works',
     desc: 'Full structural modifications, rear and side extensions built to the highest standard.',
     fullDesc: 'We design and build bespoke rear, side, and over-structure extensions that seamlessly integrate with your existing property. Our structural engineers handle everything from planning drawings to RSJ installation, party wall agreements, and building regulations sign-off.',
@@ -19,7 +99,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🏢',
+    icon: <IcoCommercial />,
     title: 'Commercial Fit-Outs',
     desc: 'Bespoke commercial interiors designed to elevate your business environment.',
     fullDesc: 'From restaurants to offices, retail units to clinics — we deliver complete commercial fit-outs that reflect your brand, meet regulatory requirements, and create an environment that works hard for your business.',
@@ -27,7 +107,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🪟',
+    icon: <IcoShopfront />,
     title: 'Shopfront Installation',
     desc: 'High-impact shopfronts — aluminium, glass, and steel systems professionally installed.',
     fullDesc: 'Your shopfront is your first impression. We install bespoke aluminium-framed glazed shopfronts, roller shutters, and composite entrance systems that balance aesthetics, security, and building regulations compliance.',
@@ -35,7 +115,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🏠',
+    icon: <IcoRoofing />,
     title: 'Roofing & External Works',
     desc: 'Flat roof, pitched roof, and all external weatherproofing solutions.',
     fullDesc: 'Our roofing division handles everything from full pitched roof replacements to flat roof systems, fascias, soffits, guttering, and external wall insulation. All works are carried out by qualified operatives with full warranty.',
@@ -43,7 +123,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🛁',
+    icon: <IcoBathroom />,
     title: 'Bathrooms & Wet Rooms',
     desc: 'Luxury bathroom design and installation with premium materials and gold finishes.',
     fullDesc: 'We create hotel-grade bathroom and wet room experiences in residential and commercial settings. From concept to completion, our bathroom specialists handle waterproofing, plumbing, tiling, and all luxury fixtures and fittings.',
@@ -51,7 +131,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🔧',
+    icon: <IcoPlumbing />,
     title: 'Plumbing & Gas Installations',
     desc: 'Gas Safe certified engineers for all plumbing, heating, and gas installation works.',
     fullDesc: 'Our Gas Safe registered engineers handle all plumbing and gas works across residential and commercial projects. From full re-pipes to boiler replacements, underfloor heating systems, and commercial gas installations.',
@@ -59,7 +139,7 @@ const SERVICES = [
 
   },
   {
-    icon: '⚡',
+    icon: <IcoElectrical />,
     title: 'Electrical Works',
     desc: 'Part P certified electricians. Rewires, consumer units, smart lighting systems.',
     fullDesc: 'Our NICEIC-approved electricians carry out the full range of domestic and commercial electrical works — from full property rewires and consumer unit upgrades to smart home systems, EV charger installation, and commercial distribution boards.',
@@ -67,7 +147,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🎨',
+    icon: <IcoPlastering />,
     title: 'Plastering & Decorating',
     desc: 'Perfect skims, feature walls, and premium decorating across all project types.',
     fullDesc: 'Our plastering and decorating teams deliver flawless finishes across every project. From scratch coat and skim plaster to specialist finishes, feature walls, and premium decorating — the difference is in the detail.',
@@ -75,7 +155,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🪵',
+    icon: <IcoTiling />,
     title: 'Tiling & Flooring',
     desc: 'LVT, porcelain, marble, and hardwood flooring — expertly laid and finished.',
     fullDesc: 'From luxury vinyl tile to natural stone, engineered hardwood to large-format porcelain — our flooring specialists ensure perfect preparation, precision installation, and flawless finishing on every surface.',
@@ -83,7 +163,7 @@ const SERVICES = [
 
   },
   {
-    icon: '💨',
+    icon: <IcoVentilation />,
     title: 'Ventilation Systems',
     desc: 'MVHR and mechanical ventilation solutions for residential and commercial builds.',
     fullDesc: 'Effective ventilation is essential for air quality, building performance, and regulatory compliance. We design and install MVHR (heat recovery) systems, MEV, and mechanical ventilation across residential and commercial projects.',
@@ -91,7 +171,7 @@ const SERVICES = [
 
   },
   {
-    icon: '🔩',
+    icon: <IcoSteel />,
     title: 'Steel & Structural Modifications',
     desc: 'RSJ installation, steel frames, load-bearing alterations with full calculations.',
     fullDesc: 'Load-bearing alterations require precision, expertise, and the right engineering. Our structural team handles RSJ beam installation, steel frame construction, loft conversions, and all structural modifications with full SE calculations and building control approval.',

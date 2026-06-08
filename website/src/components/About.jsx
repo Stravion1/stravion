@@ -17,7 +17,6 @@ export default function About() {
         y: 40, opacity: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' }
       })
-      // Subtle parallax on image
       gsap.to('.about-img-wrap img', {
         yPercent: -12,
         ease: 'none',
@@ -34,7 +33,7 @@ export default function About() {
     <section id="about" ref={sectionRef} className="about section-pad">
       <div className="container about-grid">
         <div className="about-img-wrap">
-          <img src="/assets/proj-b8.jpeg" alt="STRAVION luxury interior project" loading="lazy" />
+          <img src="/assets/proj-b8.jpeg" alt="STRAVION luxury construction project" loading="lazy" />
           <div className="about-img-badge">
             <span className="badge-num">15+</span>
             <span className="badge-txt">Years of Excellence</span>
@@ -44,22 +43,42 @@ export default function About() {
         <div className="about-content">
           <p className="section-label">About Stravion</p>
           <h2 className="section-title">
-            Built For <em>High-End Living</em><br />
+            Built for <em>High-End Living</em><br />
             &amp; Commercial Excellence
           </h2>
           <div className="gold-rule" />
+
           <p className="about-body">
-            STRAVION Construction Group is a premium London-based construction company delivering world-class residential, commercial, and structural projects. From luxury home extensions to bespoke commercial fit-outs, we combine precision engineering with refined craftsmanship.
+            STRAVION is a premium construction and project management company delivering
+            high-quality turnkey solutions across residential and commercial sectors
+            throughout the United Kingdom.
           </p>
           <p className="about-body" style={{ marginTop: '16px' }}>
-            Every project is treated as a signature work — managed end-to-end with an unwavering commitment to quality, transparency, and on-time delivery.
+            From initial planning and project coordination to foundations, structural works,
+            fit-outs and final finishes, we provide complete end-to-end construction services
+            under one trusted partner. Our integrated approach ensures seamless project delivery,
+            clear communication and complete accountability throughout every stage of the build.
+          </p>
+          <p className="about-body" style={{ marginTop: '16px' }}>
+            We specialise in luxury residential developments, high-end bathrooms, bespoke
+            interiors, property transformations, extensions, refurbishments and commercial
+            construction projects. Whether undertaking a premium home renovation or delivering
+            a large-scale commercial development, our focus remains the same — exceptional
+            quality, meticulous attention to detail and outstanding client experience.
+          </p>
+          <p className="about-body" style={{ marginTop: '16px' }}>
+            Our project management expertise allows us to coordinate contractors, suppliers,
+            schedules and budgets efficiently, ensuring projects are delivered safely, on time
+            and to the highest standards. By combining skilled craftsmanship with professional
+            project leadership, we create spaces that enhance value, functionality and
+            long-term performance.
           </p>
 
           <ul className="about-pillars">
             {[
-              ['Turnkey Solutions', 'One team. Full delivery.'],
-              ['Premium Materials', 'Only the finest finishes.'],
-              ['Certified Engineers', 'Fully licensed & insured.'],
+              ['Turnkey Solutions', 'One team. Full end-to-end delivery.'],
+              ['Project Management', 'Coordinated, on time and on budget.'],
+              ['Complete Accountability', 'Fully licensed, insured & transparent.'],
             ].map(([title, sub]) => (
               <li key={title} className="pillar">
                 <div className="pillar-dot" />
@@ -70,6 +89,11 @@ export default function About() {
               </li>
             ))}
           </ul>
+
+          <p className="about-tagline">
+            Complete Turnkey Construction &amp; Project Management Solutions.<br />
+            <em>Built for High-End Living &amp; Commercial Excellence.</em>
+          </p>
 
           <div className="about-ctas">
             <Link to="/about" className="btn-gold">

@@ -9,11 +9,11 @@ import '../styles/about-page.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const TIMELINE = [
-  { year: '2009', title: 'Founded in London',       desc: 'Stravion was established with a single mission: to deliver construction excellence without compromise.' },
-  { year: '2013', title: 'Commercial Expansion',    desc: 'We expanded into the commercial sector, completing high-profile fit-outs across Central London.' },
-  { year: '2017', title: 'Structural Specialists',  desc: 'Our structural team grew to handle complex RSJ, steel frame, and multi-storey extension projects.' },
-  { year: '2021', title: '500+ Projects Delivered', desc: 'A landmark milestone — 500 completed projects across residential, commercial, and structural sectors.' },
-  { year: '2024', title: 'Award-Level Quality',     desc: "Recognised as one of London's premier construction groups, with a 98% client satisfaction record." },
+  { year: '2009', title: 'Founded in the Midlands',   desc: 'Stravion was established with a single mission: to deliver construction excellence without compromise.' },
+  { year: '2013', title: 'Commercial Expansion',      desc: 'We expanded into the commercial sector, completing high-profile fit-outs across the UK.' },
+  { year: '2017', title: 'Structural Specialists',    desc: 'Our structural team grew to handle complex RSJ, steel frame, and multi-storey extension projects.' },
+  { year: '2021', title: '300+ Projects Delivered',   desc: 'A landmark milestone — 300 completed projects across residential, commercial, and structural sectors.' },
+  { year: '2024', title: 'Award-Level Quality',       desc: 'Recognised as one of the UK\'s premium construction groups, with a 100% client satisfaction record.' },
 ]
 
 const PILLARS = [
@@ -26,8 +26,8 @@ const PILLARS = [
 ]
 
 const STATS = [
-  { num: '500+', label: 'Projects Delivered' },
-  { num: '98%',  label: 'Client Satisfaction' },
+  { num: '300+', label: 'Projects Delivered' },
+  { num: '100%', label: 'Client Satisfaction' },
   { num: '15+',  label: 'Years in Business' },
   { num: '24/7', label: 'Project Support' },
 ]
@@ -83,7 +83,7 @@ export default function AboutPage() {
     <div ref={pageRef}>
       <SEOTags 
         title="About Us | STRAVION Construction Group"
-        description="With over 15 years of excellence, Stravion is a leading luxury construction company in London. Discover our journey, values, and commitment to quality."
+        description="With over 15 years of excellence, Stravion is a premium UK construction company. Discover our journey, values, and commitment to quality."
         url="https://stravion.co.uk/about"
       />
 
@@ -113,7 +113,7 @@ export default function AboutPage() {
             </TextReveal>
           </h1>
           <TextReveal as="p" className="ap-hero-sub" delay={0.95} duration={0.75} trigger="mount">
-            London's premier construction group — since 2009.
+            UK-wide premium construction — since 2009.
           </TextReveal>
         </div>
       </section>
@@ -149,7 +149,7 @@ export default function AboutPage() {
             <div className="gold-rule" />
             <WordReveal
               className="about-body"
-              text="STRAVION Construction Group is a premium London-based construction company delivering world-class residential, commercial, and structural projects. From luxury home extensions to bespoke commercial fit-outs, we combine precision engineering with refined craftsmanship."
+              text="STRAVION is a premium construction and project management company delivering high-quality turnkey solutions across residential and commercial sectors throughout the United Kingdom."
               delay={0}
               duration={0.65}
               staggerTime={0.025}
@@ -157,7 +157,7 @@ export default function AboutPage() {
             />
             <WordReveal
               className="about-body"
-              text="Every project is treated as a signature work — managed end-to-end with an unwavering commitment to quality, transparency, and on-time delivery. We don't just build structures; we build legacies."
+              text="From initial planning and project coordination to foundations, structural works, fit-outs and final finishes, we provide complete end-to-end construction services under one trusted partner. At STRAVION, we believe successful projects are built on trust, transparency and excellence."
               delay={0.1}
               duration={0.65}
               staggerTime={0.025}
