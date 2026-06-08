@@ -12,16 +12,25 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      /* ── Hero "landing" effect — starts zoomed, settles as preloader exits ── */
+      gsap.set(sectionRef.current, { scale: 1.12, transformOrigin: 'center center' })
+      gsap.to(sectionRef.current, {
+        scale: 1,
+        duration: 1.4,
+        ease: 'power2.out',
+        delay: 2.9,  // syncs with preloader portal rush exit
+      })
+
       /* ── Eyebrow + buttons + scroll indicator fade+slide up ── */
       gsap.set(['.hero-eyebrow', '.hero-sub', '.hero-btns', '.hero-scroll'], {
         opacity: 0, y: 24,
       })
       gsap.set('.hero-scroll', { opacity: 0, y: 0 })
 
-      // Animate in after preloader panels clear (~3.5s into load)
+      // Animate in after preloader portal clears (~3.4s into load)
       const tl = gsap.timeline({ delay: 3.0 })
       tl.to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
-        /* hero title is handled by LineReveal with its own delay of 3.7 */
+        /* hero title is handled by LineReveal with its own delay of 3.2 */
         .to('.hero-sub',     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '+=0.35')
         .to('.hero-btns',    { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
         .to('.hero-scroll',  { opacity: 1,        duration: 0.6 }, '-=0.2')

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    PRELOADER — Stravion Construction Group
-   Logo on black → iris-close scale exit
+   Portal rush / "zoom into website" cinematic exit
 ═══════════════════════════════════════════════════ */
 
 #preloader {
@@ -9,19 +9,34 @@
   z-index: 99999;
   overflow: hidden;
   pointer-events: all;
-  will-change: transform;
-  transform-origin: center center;
 }
 
-/* ── Pure black background ── */
+/* ── Pure black background layer ── */
 .pl-bg {
   position: absolute;
   inset: 0;
-  background: #060606;
+  background: #050505;
+  z-index: 0;
 }
 
-/* ── CENTER CONTENT ── */
-.pl-center {
+/* ── Portal ring — gold circle that expands/contracts ── */
+.pl-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 180px; height: 180px;
+  margin: -90px 0 0 -90px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(214,176,106,0.75);
+  box-shadow:
+    0 0 24px rgba(214,176,106,0.4),
+    inset 0 0 24px rgba(214,176,106,0.15);
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* ── INNER WRAPPER — the bit that rushes toward viewer on exit ── */
+.pl-inner {
   position: absolute;
   inset: 0;
   display: flex;
@@ -30,18 +45,18 @@
   justify-content: center;
   z-index: 2;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
-/* ── Radial gold glow ── */
+/* ── Radial gold glow behind logo ── */
 .pl-logo-glow {
   position: absolute;
-  width: 340px;
-  height: 340px;
+  width: 360px; height: 360px;
   background: radial-gradient(
     ellipse at center,
-    rgba(214,176,106,0.22) 0%,
-    rgba(214,176,106,0.08) 45%,
-    transparent 72%
+    rgba(214,176,106,0.24) 0%,
+    rgba(214,176,106,0.08) 42%,
+    transparent 70%
   );
   border-radius: 50%;
   will-change: transform, opacity;
@@ -51,8 +66,7 @@
 /* ── Logo wrap ── */
 .pl-logo-wrap {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 106px; height: 106px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,18 +75,17 @@
 }
 
 .pl-logo-img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: contain;
   display: block;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 0 20px rgba(214,176,106,0.5));
+  filter: drop-shadow(0 0 22px rgba(214,176,106,0.55));
 }
 
-/* ── Gold divider ── */
+/* ── Gold divider line ── */
 .pl-line-wrap {
-  width: 160px;
+  width: 155px;
   overflow: hidden;
   margin-bottom: 18px;
 }
@@ -82,9 +95,9 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(214,176,106,0.85) 30%,
+    rgba(214,176,106,0.8) 25%,
     #E4C98A 50%,
-    rgba(214,176,106,0.85) 70%,
+    rgba(214,176,106,0.8) 75%,
     transparent
   );
   transform-origin: center;
@@ -97,17 +110,17 @@
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  will-change: opacity, transform;
+  will-change: opacity, transform, letter-spacing;
 }
 .pl-name {
   font-family: 'Outfit', sans-serif;
   font-size: clamp(18px, 3vw, 24px);
   font-weight: 600;
-  letter-spacing: 0.38em;
+  letter-spacing: 0.55em; /* animated to 0.38em by GSAP */
   text-transform: uppercase;
   color: #E4C98A;
   line-height: 1;
-  text-shadow: 0 0 32px rgba(228,201,138,0.55);
+  text-shadow: 0 0 36px rgba(228,201,138,0.6);
 }
 .pl-sub {
   font-family: 'Outfit', sans-serif;
