@@ -38,11 +38,25 @@ export default function App() {
     }
   }, [])
 
-  // Scroll to top and refresh ScrollTrigger on route change
+  // Scroll to top on EVERY route change
   useEffect(() => {
-    window.scrollTo(0, 0)
-    if (lenisRef.current) lenisRef.current.scrollTo(0, { immediate: true })
-    ScrollTrigger.refresh()
+    // 1. Stop any ongoing Lenis momentum
+    if (lenisRef.current) {
+      lenisRef.current.stop()
+    }
+    // 2. Instantly jump native scroll to top
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+    // 3. Reset Lenis position to top
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true, force: true })
+      // Resume Lenis after reset
+      lenisRef.current.start()
+    }
+    // 4. Refresh ScrollTrigger after DOM has settled
+    const t = setTimeout(() => ScrollTrigger.refresh(), 80)
+    return () => clearTimeout(t)
   }, [location.pathname])
 
   // Scroll progress bar
