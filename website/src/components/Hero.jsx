@@ -51,8 +51,8 @@ export default function Hero() {
     <section id="hero" ref={sectionRef} className="hero">
       <div className="hero-video-wrap">
         <video autoPlay muted loop playsInline>
-          <source src="/assets/vid1.mp4" type="video/mp4" />
-          <source src="/assets/vid2.mp4" type="video/mp4" />
+          <source src="/assets/vid3.mp4" type="video/mp4" />
+          <source src="/assets/vid4.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="hero-overlay" />
