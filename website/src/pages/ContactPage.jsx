@@ -8,8 +8,8 @@ import '../styles/contact-page.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const WA_NUMBER = '447706938064'
-const PHONE     = '07706938064'
+const WA_NUMBER = '447808857276'
+const PHONE     = '07808857276'
 const EMAIL     = 'info@stravion.co.uk'
 const ADDRESS   = '18 Babingley Drive, Leicester, LE4 0HG'
 

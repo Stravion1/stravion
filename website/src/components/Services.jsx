@@ -7,7 +7,7 @@ import '../styles/service-modal.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const WA = '447706938064'
+const WA = '447808857276'
 
 /* ─── Premium SVG Icons ─── */
 const IcoExtensions = () => (
@@ -302,7 +302,7 @@ export default function Services() {
                 </svg>
                 Get a Quote on WhatsApp
               </a>
-              <a href="tel:07706938064" className="svc-modal-call-btn">
+              <a href="tel:07808857276" className="svc-modal-call-btn">
                 📞 Call Us
               </a>
             </div>

@@ -201,7 +201,7 @@ export default function ProjectsPage() {
             <h2 className="section-title" style={{ textAlign: 'center' }}>Start Your <em>Project.</em></h2>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem', flexWrap: 'wrap' }}>
               <a
-                href="https://wa.me/447706938064?text=Hi Stravion! I'd like to discuss a project."
+                href="https://wa.me/447808857276?text=Hi Stravion! I'd like to discuss a project."
                 target="_blank" rel="noopener noreferrer"
                 className="btn-gold"
               ><span>WhatsApp Us</span></a>

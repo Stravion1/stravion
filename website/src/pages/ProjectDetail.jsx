@@ -110,13 +110,13 @@ export default function ProjectDetail() {
               <p style={{ color: 'var(--silver)', marginBottom: '1rem' }}>Interested in a similar project?</p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a
-                  href={`https://wa.me/447706938064?text=Hi, I'd like to discuss a project similar to ${project.title}`}
+                  href={`https://wa.me/447808857276?text=Hi, I'd like to discuss a project similar to ${project.title}`}
                   target="_blank" rel="noopener noreferrer"
                   className="btn-gold"
                 >
                   <span>Chat on WhatsApp</span>
                 </a>
-                <a href="tel:07706938064" className="btn-outline"><span>Call Us</span></a>
+                <a href="tel:07808857276" className="btn-outline"><span>Call Us</span></a>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function ProjectDetail() {
             <div className="pd-wa-card">
               <p>Get a free quote for your project</p>
               <a
-                href={`https://wa.me/447706938064?text=Hi, I'd like a quote for a project similar to ${project.title}`}
+                href={`https://wa.me/447808857276?text=Hi, I'd like a quote for a project similar to ${project.title}`}
                 target="_blank" rel="noopener noreferrer"
                 className="pd-wa-btn"
               >

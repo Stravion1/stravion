@@ -33,11 +33,11 @@ export default function CTA() {
             Contact our team today for a free consultation and detailed quotation on your project.
           </p>
           <div className="cta-actions">
-            <a href="tel:07706938064" className="btn-gold">
-              <span>Call 07706 938064</span>
+            <a href="tel:07808857276" className="btn-gold">
+              <span>Call 07808 857276</span>
             </a>
             <a
-              href="https://wa.me/447706938064?text=Hi Stravion! I'd like a free quote for my project."
+              href="https://wa.me/447808857276?text=Hi Stravion! I'd like a free quote for my project."
               target="_blank" rel="noopener noreferrer"
               className="btn-outline"
             >

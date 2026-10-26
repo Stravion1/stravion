@@ -73,7 +73,7 @@ export default function Footer() {
               Delivering high-end residential, commercial, and structural construction projects across the United Kingdom.
             </p>
             <div className="footer-socials">
-              <a href="https://wa.me/447706938064" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link social-wa">
+              <a href="https://wa.me/447808857276" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link social-wa">
                 <IconWhatsApp />
               </a>
               <a href="mailto:info@stravion.co.uk" aria-label="Email" className="social-link social-em">
@@ -115,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="contact-icon"><IconPhone /></span>
-                <a href="tel:07706938064">07706 938064</a>
+                <a href="tel:07808857276">07808 857276</a>
               </li>
               <li>
                 <span className="contact-icon"><IconEmail /></span>
@@ -130,7 +130,7 @@ export default function Footer() {
             <div className="footer-cta-block">
               <p className="footer-cta-label">Ready to start your project?</p>
               <a
-                href="https://wa.me/447706938064?text=Hi Stravion! I'd like a free quote."
+                href="https://wa.me/447808857276?text=Hi Stravion! I'd like a free quote."
                 target="_blank" rel="noopener noreferrer"
                 className="btn-gold"
                 style={{ fontSize: '10px', padding: '14px 28px' }}

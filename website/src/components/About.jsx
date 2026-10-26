@@ -99,7 +99,7 @@ export default function About() {
             <Link to="/about" className="btn-gold">
               <span>Our Story</span>
             </Link>
-            <a href="tel:07706938064" className="btn-outline">
+            <a href="tel:07808857276" className="btn-outline">
               <span>Call Us Today</span>
             </a>
           </div>

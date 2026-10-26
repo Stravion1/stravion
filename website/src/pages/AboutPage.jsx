@@ -164,7 +164,7 @@ export default function AboutPage() {
               trigger="scroll"
             />
             <div className="about-ctas" style={{ marginTop: '2rem' }}>
-              <a href="tel:07706938064" className="btn-gold"><span>Call Us Today</span></a>
+              <a href="tel:07808857276" className="btn-gold"><span>Call Us Today</span></a>
               <a href="/contact" className="btn-outline"><span>Get A Quote</span></a>
             </div>
           </div>
